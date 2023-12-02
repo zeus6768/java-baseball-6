@@ -30,3 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### zeus6768 Custom ##
+.DS_STORE
