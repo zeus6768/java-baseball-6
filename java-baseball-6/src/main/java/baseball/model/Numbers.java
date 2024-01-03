@@ -2,6 +2,7 @@ package baseball.model;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 public class Numbers {
 
@@ -34,6 +35,14 @@ public class Numbers {
         if (numbers.stream().distinct().toList().size() != numbers.size()) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public boolean contains(int number) {
+        return numbers.contains(number);
+    }
+
+    public Stream<Integer> stream() {
+        return numbers.stream();
     }
 
     @Override

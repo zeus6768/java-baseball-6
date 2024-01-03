@@ -3,6 +3,7 @@ package baseball;
 import java.util.List;
 
 import baseball.model.Numbers;
+import baseball.model.Referee;
 import baseball.view.input.InputView;
 import camp.nextstep.edu.missionutils.Randoms;
 
@@ -17,6 +18,8 @@ public class BaseballGame {
     public void play() {
         Numbers numbers = new Numbers(generateRandomUniqueThreeDigitNumber());
         Numbers userNumbers = inputView.askNumber();
+        Referee referee = new Referee(numbers);
+
     }
 
     private List<Integer> generateRandomUniqueThreeDigitNumber() {
