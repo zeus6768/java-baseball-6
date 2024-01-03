@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-public class Numbers {
+public class BaseballNumber {
 
     private final List<Integer> numbers;
 
-    public Numbers(List<Integer> numbers) {
+    public BaseballNumber(List<Integer> numbers) {
         validate(numbers);
         this.numbers = numbers;
     }
@@ -37,8 +37,16 @@ public class Numbers {
         }
     }
 
+    public int get(int index) {
+        return numbers.get(index);
+    }
+
     public boolean contains(int number) {
         return numbers.contains(number);
+    }
+
+    public int size() {
+        return numbers.size();
     }
 
     public Stream<Integer> stream() {
@@ -50,7 +58,7 @@ public class Numbers {
         if (this == object) {
             return true;
         }
-        return object instanceof Numbers other && numbers.equals(other.numbers);
+        return object instanceof BaseballNumber other && numbers.equals(other.numbers);
     }
 
     @Override

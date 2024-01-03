@@ -2,7 +2,9 @@ package baseball;
 
 import java.util.List;
 
-import baseball.model.Numbers;
+import baseball.model.BaseballNumber;
+import baseball.model.CompareResult;
+import baseball.model.ResultType;
 import baseball.model.Referee;
 import baseball.view.input.InputView;
 import camp.nextstep.edu.missionutils.Randoms;
@@ -16,10 +18,13 @@ public class BaseballGame {
     }
 
     public void play() {
-        Numbers numbers = new Numbers(generateRandomUniqueThreeDigitNumber());
-        Numbers userNumbers = inputView.askNumber();
-        Referee referee = new Referee(numbers);
-
+        BaseballNumber computerNumber = new BaseballNumber(generateRandomUniqueThreeDigitNumber());
+        Referee referee = new Referee(computerNumber);
+        boolean gameStatus = true;
+        while (gameStatus) {
+            BaseballNumber userBaseballNumber = inputView.askNumber();
+            CompareResult result = referee.compare(userBaseballNumber);
+        }
     }
 
     private List<Integer> generateRandomUniqueThreeDigitNumber() {

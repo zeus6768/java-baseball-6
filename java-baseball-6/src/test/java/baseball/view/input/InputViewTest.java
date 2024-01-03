@@ -15,7 +15,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import baseball.model.Numbers;
+import baseball.model.BaseballNumber;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputViewTest {
@@ -40,8 +40,8 @@ public class InputViewTest {
         @MethodSource
         void askNumberTest(String input, List<Integer> expectedList) {
             setIn(input);
-            Numbers actual = inputView.askNumber();
-            assertThat(actual).isEqualTo(new Numbers(expectedList));
+            BaseballNumber actual = inputView.askNumber();
+            assertThat(actual).isEqualTo(new BaseballNumber(expectedList));
         }
 
         private static Stream<Arguments> askNumberTest() {

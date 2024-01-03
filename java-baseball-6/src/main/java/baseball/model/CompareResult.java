@@ -1,8 +1,4 @@
 package baseball.model;
 
-public enum CompareResult {
-    NOTHING(),
-    BALL(),
-    STRIKE(),
-    BALL_AND_STRIKE();
+public record CompareResult(ResultType resultType, int ball, int strike) {
 }
